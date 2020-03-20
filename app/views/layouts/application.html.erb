@@ -1,15 +1,81 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookers2</title>
+    <title>Bookers</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <%= yield %>
+    <header class="navbar navbar-inverse navbar-fixed-top clearfix">
+      <div class="container">
+        <div class="row">
+          <nav class="nav navbar-nav navbar-left">
+            <h2 class="title">Bookers</h2>
+          </nav>
+          <nav>
+            <% if user_signed_in? %>
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <%= link_to user_path(current_user) do %>
+                    <span class="glyphicon glyphicon-home home">  Home</span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to users_path do %>
+                    <span class="glyphicon glyphicon-user users">  Users</span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to books_path do %>
+                    <span class="glyphicon glyphicon-book books">  Books</span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to destroy_user_session_path(current_user), method: :delete do %>
+                    <span class="glyphicon glyphicon-log-out logout">  logout</span>
+                  <% end %>
+                </li>
+              </ul>
+            <% else %>
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <%= link_to root_path do %>
+                    <span class="glyphicon glyphicon-home home">  Home</span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to home_about_path do %>
+                    <span class="glyphicon glyphicon-link about">  About</span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_user_registration_path do %>
+                    <span class="glyphicon glyphicon-edit sign_up">  Sign Up</span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_user_session_path do %>
+                    <span class="glyphicon glyphicon-log-in sign_in">  login</span>
+                  <% end %>
+                </li>
+              </ul>
+            <% end %>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="row">
+      <%= yield %>
+    </main>
+    <div class="row">
+      <div class="copy col-xs-offset-8 col-xs-4">
+        <p>CopyRight Infratop.inc</p>
+      </div>
+    </div>
   </body>
 </html>

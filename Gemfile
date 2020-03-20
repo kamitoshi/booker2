@@ -63,5 +63,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # original gemfile
 gem "devise"
-gem "bootstrap"
+
+# CSS用のgem
+gem "bootstrap-sass"
 gem "jquery-rails"
+
+# プロフィール画像用のgem
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"

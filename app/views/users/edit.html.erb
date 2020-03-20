@@ -1,0 +1,25 @@
+<div class="edit-form-box container">
+  <div class="row">
+    <h2 class="sub-title">User info</h2>
+      <%= form_for (@user) do |f| %>
+
+        <div class="field">
+          <%= f.label :name %>
+          <%= f.text_field :name, autofocus: true %>
+        </div>
+        <div class="field">
+          <h4>Image</h4>
+          <%= f.attachment_field :profile_image %>
+        </div>
+        <div class="field">
+          <%= f.label :introduction %>
+          <%= f.text_area :introduction %>
+        </div>
+
+        <div class="button">
+          <%= f.submit "Update User" %>
+        </div>
+
+      <% end %>
+  </div>
+</div>
