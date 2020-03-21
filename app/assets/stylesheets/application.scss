@@ -21,7 +21,7 @@
   color: white;
 }
 main{
-  margin-top:53px;
+  margin-top:75px;
 }
 .field{
   margin-top: 15px;
@@ -30,7 +30,7 @@ main{
   margin-top:15px;
 }
 .container{
-  width:800px;
+  width:90%;
 }
 .none{
   text-align: center;
@@ -43,11 +43,19 @@ table{
   margin-left: 20px;
 }
 .buttons{
-  text-align: right;
+  text-align: center;
+  a{
+    color:white;
+  }
 }
-.form-box input, textarea{
-  width:100%;
+.form-box{
+  input,textarea{
+    width:100%;
+  }
 }
 .button{
   margin-top:30px;
+}
+.edit-form-box{
+  margin-left:50px;
 }
